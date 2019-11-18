@@ -4,7 +4,7 @@
 Sort pokemon by their likelihood to win battles
 
 ## Preamble:
-Do analysis on a subset of data available at https://pokeapi.co/to come up with a team of 6 Pokemon
+Do analysis on a subset of data available at https://pokeapi.co/ to come up with a team of 6 Pokemon
 that has the highest chance of winning battles.
 
 Do analysis initially based solely on the Pokemon “type” system - a system
