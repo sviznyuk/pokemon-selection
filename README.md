@@ -23,16 +23,17 @@ The list of eligible Pokemon for this team is all Pokemon in the National Dex ht
 
 ## Deliverables:
 
-1. Storage schema for storing the relevant data retrieved from the PokéAPI.  
-   The storage schema consists of 5 tables:
+###1. Storage schema for storing the relevant data retrieved from the PokéAPI.
+
+   **The storage schema consists of 5 tables:
    
-   eligible_pokemon       (pokemon_name)                                    - the list of eligible pokemon     
-   pokemon_types          (pokemon_name,pokemon_type)                       - pokemon names with their types  
-   damage_relations       (damage, from_type, to_type)                      - pokemon types with damage they can do to other types
-                                                                              and sustain from other types  
+   eligible_pokemon       (pokemon_name)                                    **the list of eligible pokemon**  
+   pokemon_types          (pokemon_name,pokemon_type)                       **pokemon names with their types**  
+   damage_relations       (damage, from_type, to_type)                      **pokemon types with damage they can do to other types  
+                                                                              and sustain from other types**  
    pokemon_damage_levels  (pokemon_name,pokemon_type,damage_to,to_type,damage_from,from_type)  
-   pokemon_ranking        (pokemon_name,damage_to,damage_from,damage_diff)  - the final result,
-                                                                              the pokemon sorted by their damage abilities  
+   pokemon_ranking        (pokemon_name,damage_to,damage_from,damage_diff)  **the final result,
+                                                                              the pokemon sorted by their damage abilities**  
 
    The schema is physicalized and loaded with data, as 5 CSV files:
 
@@ -42,7 +43,7 @@ The list of eligible Pokemon for this team is all Pokemon in the National Dex ht
    pokemon_damage_levels.csv  
    pokemon_ranking.csv
 
-2. Develop an integration with the PokéAPI to extract the relevant information and store it in defined storage schema.
+###2. Develop an integration with the PokéAPI to extract the relevant information and store it in defined storage schema.
 
    select_pokemon.py Python3 script is provided
    
@@ -81,7 +82,7 @@ Retrieving damage relations for shadow in 0.154 s
 Reformating and writing data in 1.162 s  
 Total runtime 10.2 s
 
-3. Final result:  
+###3. Final result:  
    From pokemon_ranking.csv file, it follows:  
    the 6 pokemon with max difference between ability to do damage to others and sustain damage from others are:  
 
@@ -101,32 +102,32 @@ diglett-alola|      848      |      704        |      144
 dugtrio-alola|      848      |      704        |      144  
 -------------+---------------+-----------------+----------------  
 
-4. Followup Questions:
+###4. Followup Questions:
 
-   4.1 How would you work with stakeholders to make sure the storage schema meets their requirements?  
+   **4.1 How would you work with stakeholders to make sure the storage schema meets their requirements?**  
        The schema maps between pokemon, their types, and damage abilities which allows analysts to  
        run various queries to sort pokemon by their abilities using different criteria  
 
-   4.2 What conveniences could you add to the schema to improve their workflow?  
+   **4.2 What conveniences could you add to the schema to improve their workflow?**  
        Multiple views can be created on top of 5 tables to present data in different prospectives.  
        Data can be loaded into relational database in AWS cloud and made available via web interface.
   
-   4.3 What changes would you need to make to this storage schema (if any) to handle arbitrary additional  
+   **4.3 What changes would you need to make to this storage schema (if any) to handle arbitrary additional**  
        data the Data Science team would like to consider from the API in their analysis?  
        The intermediate steps to load schema tables allows adding additional attributes to consideration,  
        in addition to pokemon types. More tables may be added in addition to pokemon_types to contain  
        mapping of pokemon to other attributes
        
-   4.4 What changes would we need to make to the schema to support different versions of Pokemon across game generations  
-       that may have new/updated types?  
+   **4.4 What changes would we need to make to the schema to support different versions of Pokemon across game generations  
+       that may have new/updated types?**  
        The current schema already supports different version of Pokemon, e.g. steelix and steelix-mega,  
        landorus-incarnate and landorus-therian, diglett and diglett-alola, etc
        
-   4.5 What concepts should we utilize if we needed to make sure our Pokemon types are keptup-to-date on a daily basis?  
+   **4.5 What concepts should we utilize if we needed to make sure our Pokemon types are keptup-to-date on a daily basis?**  
        A batch job needs to be setup to execute select_pokemon.py script on a daily basis
    
-   4.6 What other considerations do we need to take into account while trying to keep our data up-to-date?  
+   **4.6 What other considerations do we need to take into account while trying to keep our data up-to-date?**  
        One has to monitor changes to PokeAPI interface and specs
   
-   4.7 How can we verify the continued accuracy of our data and/or correct for invalid or incomplete data in our pipeline?  
+   **4.7 How can we verify the continued accuracy of our data and/or correct for invalid or incomplete data in our pipeline?**  
        A separate and independent reconciliation batch job has to be set up to reconcile data in the schema back to PokeAPI
