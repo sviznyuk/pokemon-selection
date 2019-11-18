@@ -45,9 +45,9 @@ The list of eligible Pokemon for this team is all Pokemon in the National Dex ht
 
 ### 2. Develop an integration with the PokéAPI to extract the relevant information and store it in defined storage schema.
 
-   select_pokemon.py Python3 script is provided
+   **select_pokemon.py** Python3 script is provided
    
-   The script requires the following Python modules:
+   The script requires the following Python modules:  
    requests  
    pandas  
    json  
@@ -86,21 +86,14 @@ Total runtime 10.2 s
    From pokemon_ranking.csv file, it follows:  
    the 6 pokemon with max difference between ability to do damage to others and sustain damage from others are:  
 
--------------+---------------+-----------------+----------------  
-pokemon_name | sum_damage_to | sum_damage_from | sum_damage_diff  
--------------+---------------+-----------------+----------------  
-heatran      |      992      |      832        |      160  
--------------+---------------+-----------------+----------------  
-klefki       |      776      |      616        |      160  
--------------+---------------+-----------------+----------------  
-mawile       |      776      |      616        |      160  
--------------+---------------+-----------------+----------------  
-skarmory     |      812      |      664        |      148  
--------------+---------------+-----------------+----------------  
-diglett-alola|      848      |      704        |      144  
--------------+---------------+-----------------+----------------  
-dugtrio-alola|      848      |      704        |      144  
--------------+---------------+-----------------+----------------  
+| pokemon_name | sum_damage_to | sum_damage_from | sum_damage_diff |
+| --- | --- | --- | --- |
+| heatran | 992 | 832 | 160
+| klefki | 776 | 616 | 160
+| mawile | 776 | 616 | 160
+| skarmory | 812 | 664 | 148
+| diglett-alola | 848 | 704 | 144
+| dugtrio-alola| 848 | 704 | 144
 
 ### 4. Followup Questions:
 
