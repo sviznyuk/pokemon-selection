@@ -26,6 +26,7 @@ The list of eligible Pokemon for this team is all Pokemon in the National Dex ht
 ### 1. Storage schema for storing the relevant data retrieved from the PokéAPI.
 
    **The storage schema consists of 5 tables:**
+
 | table name | |
 | --- | --- |
 | eligible_pokemon (pokemon_name) | **the list of eligible pokemon** |
@@ -34,7 +35,7 @@ The list of eligible Pokemon for this team is all Pokemon in the National Dex ht
 | pokemon_damage_levels (pokemon_name,pokemon_type,damage_to,to_type,damage_from,from_type) | **fact table with listed attributes** |
 | pokemon_ranking (pokemon_name,damage_to,damage_from,damage_diff) | **the final result, the pokemon sorted by their damage abilities** |
 
-   The schema is physicalized and loaded with data, as 5 CSV files:
+   The schema is physicalized and loaded with data, as CSV files:
 
    eligible_pokemon.csv  
    damage_relations.csv  
