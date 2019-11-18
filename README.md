@@ -1,9 +1,9 @@
 # pokemon-selection
 
-# Objective:
+## Objective:
 Sort pokemon by their likelihood to win battles
 
-# Preamble:
+## Preamble:
 Do analysis on a subset of data available at https://pokeapi.co/to come up with a team of 6 Pokemon
 that has the highest chance of winning battles.
 
@@ -21,7 +21,7 @@ Build a team of 6 Pokemon with the widest range of type coverage for all potenti
 
 The list of eligible Pokemon for this team is all Pokemon in the National Dex https://pokeapi.co/api/v2/pokedex/1/
 
-Deliverables:
+## Deliverables:
 
 1. Storage schema for storing the relevant data retrieved from the PokéAPI.
    The storage schema consists of 5 tables:
@@ -29,8 +29,10 @@ Deliverables:
    eligible_pokemon       (pokemon_name)                                    - the list of eligible pokemon
    
    pokemon_types          (pokemon_name,pokemon_type)                       - pokemon names with their types
+   
    damage_relations       (damage, from_type, to_type)                      - pokemon types with damage they can do to other types
                                                                               and sustain from other types
+                                                                              
    pokemon_damage_levels  (pokemon_name,pokemon_type,damage_to,to_type,damage_from,from_type)
 
    pokemon_ranking        (pokemon_name,damage_to,damage_from,damage_diff)  - the final result,
@@ -39,9 +41,13 @@ Deliverables:
    The schema is physicalized and loaded with data, as 5 csv files:
 
    eligible_pokemon.csv
+   
    damage_relations.csv
+   
    pokemon_types.csv
+   
    pokemon_damage_levels.csv
+   
    pokemon_ranking.csv
 
 2. Develop an integration with the PokéAPI to extract the relevant information and store it in defined storage schema.
