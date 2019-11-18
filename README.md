@@ -27,11 +27,11 @@ The list of eligible Pokemon for this team is all Pokemon in the National Dex ht
 
    **The storage schema consists of 5 tables:**
    
-| eligible_pokemon (pokemon_name) | **the list of eligible pokemon**  
-| pokemon_types (pokemon_name,pokemon_type) | **pokemon names with their types**  
-| damage_relations (damage, from_type, to_type) | **pokemon types with damage they can do to other types and sustain from other types** 
-| pokemon_damage_levels (pokemon_name,pokemon_type,damage_to,to_type,damage_from,from_type) | **fact table with listed attributes**
-| pokemon_ranking (pokemon_name,damage_to,damage_from,damage_diff) | **the final result, the pokemon sorted by their damage abilities** 
+| eligible_pokemon (pokemon_name) | **the list of eligible pokemon** |
+| pokemon_types (pokemon_name,pokemon_type) | **pokemon names with their types** |
+| damage_relations (damage, from_type, to_type) | **pokemon types with damage they can do to other types and sustain from other types** |
+| pokemon_damage_levels (pokemon_name,pokemon_type,damage_to,to_type,damage_from,from_type) | **fact table with listed attributes** |
+| pokemon_ranking (pokemon_name,damage_to,damage_from,damage_diff) | **the final result, the pokemon sorted by their damage abilities** |
 
    The schema is physicalized and loaded with data, as 5 CSV files:
 
@@ -109,8 +109,7 @@ Total runtime 10.2 s
        in addition to pokemon types. More tables may be added in addition to pokemon_types to contain  
        mapping of pokemon to other attributes
        
-   **4.4 What changes would we need to make to the schema to support different versions of Pokemon across game generations  
-       that may have new/updated types?**  
+   **4.4 What changes would we need to make to the schema to support different versions of Pokemon across game generations that may have new/updated types?**  
        The current schema already supports different version of Pokemon, e.g. steelix and steelix-mega,  
        landorus-incarnate and landorus-therian, diglett and diglett-alola, etc
        
