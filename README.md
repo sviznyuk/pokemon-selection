@@ -1,9 +1,9 @@
 # pokemon-selection
 
-## Objective:##
+## Objective:
 Sort pokemon by their likelihood to win battles
 
-## Preamble:##
+## Preamble:
 Do analysis on a subset of data available at https://pokeapi.co/to come up with a team of 6 Pokemon
 that has the highest chance of winning battles.
 
@@ -21,9 +21,9 @@ Build a team of 6 Pokemon with the widest range of type coverage for all potenti
 
 The list of eligible Pokemon for this team is all Pokemon in the National Dex https://pokeapi.co/api/v2/pokedex/1/
 
-## Deliverables:##
+## Deliverables:
 
-###1. Storage schema for storing the relevant data retrieved from the PokéAPI.###
+### 1. Storage schema for storing the relevant data retrieved from the PokéAPI.
 
    **The storage schema consists of 5 tables:**
    
@@ -43,7 +43,7 @@ The list of eligible Pokemon for this team is all Pokemon in the National Dex ht
    pokemon_damage_levels.csv  
    pokemon_ranking.csv
 
-###2. Develop an integration with the PokéAPI to extract the relevant information and store it in defined storage schema.###
+### 2. Develop an integration with the PokéAPI to extract the relevant information and store it in defined storage schema.
 
    select_pokemon.py Python3 script is provided
    
@@ -82,7 +82,7 @@ Retrieving damage relations for shadow in 0.154 s
 Reformating and writing data in 1.162 s  
 Total runtime 10.2 s
 
-###3. Final result:###
+### 3. Final result:  
    From pokemon_ranking.csv file, it follows:  
    the 6 pokemon with max difference between ability to do damage to others and sustain damage from others are:  
 
@@ -102,7 +102,7 @@ diglett-alola|      848      |      704        |      144
 dugtrio-alola|      848      |      704        |      144  
 -------------+---------------+-----------------+----------------  
 
-###4. Followup Questions:###
+### 4. Followup Questions:
 
    **4.1 How would you work with stakeholders to make sure the storage schema meets their requirements?**  
        The schema maps between pokemon, their types, and damage abilities which allows analysts to  
@@ -112,8 +112,8 @@ dugtrio-alola|      848      |      704        |      144
        Multiple views can be created on top of 5 tables to present data in different prospectives.  
        Data can be loaded into relational database in AWS cloud and made available via web interface.
   
-   **4.3 What changes would you need to make to this storage schema (if any) to handle arbitrary additional**  
-       data the Data Science team would like to consider from the API in their analysis?  
+   **4.3 What changes would you need to make to this storage schema (if any) to handle arbitrary additional  
+       data the Data Science team would like to consider from the API in their analysis?**  
        The intermediate steps to load schema tables allows adding additional attributes to consideration,  
        in addition to pokemon types. More tables may be added in addition to pokemon_types to contain  
        mapping of pokemon to other attributes
