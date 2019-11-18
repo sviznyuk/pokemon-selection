@@ -27,13 +27,11 @@ The list of eligible Pokemon for this team is all Pokemon in the National Dex ht
 
    **The storage schema consists of 5 tables:**
    
-   eligible_pokemon       (pokemon_name)                                    **the list of eligible pokemon**  
-   pokemon_types          (pokemon_name,pokemon_type)                       **pokemon names with their types**  
-   damage_relations       (damage, from_type, to_type)                      **pokemon types with damage they can do to other types  
-                                                                              and sustain from other types**  
-   pokemon_damage_levels  (pokemon_name,pokemon_type,damage_to,to_type,damage_from,from_type)  
-   pokemon_ranking        (pokemon_name,damage_to,damage_from,damage_diff)  **the final result,
-                                                                              the pokemon sorted by their damage abilities**  
+| eligible_pokemon (pokemon_name) | **the list of eligible pokemon**  
+| pokemon_types (pokemon_name,pokemon_type) | **pokemon names with their types**  
+| damage_relations (damage, from_type, to_type) | **pokemon types with damage they can do to other types and sustain from other types** 
+| pokemon_damage_levels (pokemon_name,pokemon_type,damage_to,to_type,damage_from,from_type) | **fact table with listed attributes**
+| pokemon_ranking (pokemon_name,damage_to,damage_from,damage_diff) | **the final result, the pokemon sorted by their damage abilities** 
 
    The schema is physicalized and loaded with data, as 5 CSV files:
 
@@ -45,7 +43,7 @@ The list of eligible Pokemon for this team is all Pokemon in the National Dex ht
 
 ### 2. Develop an integration with the PokéAPI to extract the relevant information and store it in defined storage schema.
 
-   **select_pokemon.py** Python3 script is provided
+   **select_pokemon.py** Python3 script
    
    The script requires the following Python modules:  
    requests  
@@ -116,7 +114,7 @@ Total runtime 10.2 s
        The current schema already supports different version of Pokemon, e.g. steelix and steelix-mega,  
        landorus-incarnate and landorus-therian, diglett and diglett-alola, etc
        
-   **4.5 What concepts should we utilize if we needed to make sure our Pokemon types are keptup-to-date on a daily basis?**  
+   **4.5 What concepts should we utilize if we needed to make sure our Pokemon types are kept up-to-date on a daily basis?**  
        A batch job needs to be setup to execute select_pokemon.py script on a daily basis
    
    **4.6 What other considerations do we need to take into account while trying to keep our data up-to-date?**  
