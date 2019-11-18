@@ -1,19 +1,24 @@
 # pokemon-selection
 
-Objective:
+# Objective:
 Sort pokemon by their likelihood to win battles
 
-Preamble:
+# Preamble:
 Do analysis on a subset of data available at https://pokeapi.co/to come up with a team of 6 Pokemon
 that has the highest chance of winning battles.
+
 Do analysis initially based solely on the Pokemon “type” system - a system
 somewhat like “rock, paper, scissors”. For example, Fire type moves do double damage against
 Grass type Pokemon, but only do half damage to Water type Pokemon, etc.
+
 The full list of types (including links to their full half/double damage information) is available at
 https://pokeapi.co/api/v2/type
+
 Consider the typing of the Pokemon in relation to the total population of other
 Pokemon with types that are beneficial/detrimental to each Pokemon.
+
 Build a team of 6 Pokemon with the widest range of type coverage for all potential opponents.
+
 The list of eligible Pokemon for this team is all Pokemon in the National Dex https://pokeapi.co/api/v2/pokedex/1/
 
 Deliverables:
@@ -22,6 +27,7 @@ Deliverables:
    The storage schema consists of 5 tables:
    
    eligible_pokemon       (pokemon_name)                                    - the list of eligible pokemon
+   
    pokemon_types          (pokemon_name,pokemon_type)                       - pokemon names with their types
    damage_relations       (damage, from_type, to_type)                      - pokemon types with damage they can do to other types
                                                                               and sustain from other types
