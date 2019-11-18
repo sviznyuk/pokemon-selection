@@ -26,7 +26,8 @@ The list of eligible Pokemon for this team is all Pokemon in the National Dex ht
 ### 1. Storage schema for storing the relevant data retrieved from the PokéAPI.
 
    **The storage schema consists of 5 tables:**
-   
+| table name | |
+| --- | --- |
 | eligible_pokemon (pokemon_name) | **the list of eligible pokemon** |
 | pokemon_types (pokemon_name,pokemon_type) | **pokemon names with their types** |
 | damage_relations (damage, from_type, to_type) | **pokemon types with damage they can do to other types and sustain from other types** |
