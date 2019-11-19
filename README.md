@@ -32,7 +32,8 @@ The list of eligible Pokemon for this team is all Pokemon in the National Dex ht
 | eligible_pokemon | pokemon_name | **the list of eligible pokemon** |
 | pokemon_types | pokemon_name, pokemon_type | **pokemon names with their types** |
 | damage_relations | damage, from_type, to_type | **pokemon types with damage they can do to other types and sustain from other types** |
-| pokemon_damage_levels | pokemon_name, pokemon_type, damage_to, to_type, damage_from, from_type | **the main fact table** |
+| pokemon_damage_levels_to | pokemon_name, pokemon_type, damage_to, to_type | **the main fact table** |
+| pokemon_damage_levels_from | pokemon_name, pokemon_type, damage_from, from_type | **the main fact table** |
 | pokemon_ranking | pokemon_name, damage_to, damage_from, damage_diff | **the pokemon sorted by their damage abilities** |
 
    The schema is physicalized and loaded with data, as CSV files:
@@ -40,7 +41,8 @@ The list of eligible Pokemon for this team is all Pokemon in the National Dex ht
    eligible_pokemon.csv  
    damage_relations.csv  
    pokemon_types.csv  
-   pokemon_damage_levels.csv  
+   pokemon_damage_levels_to.csv
+   pokemon_damage_levels_from.csv
    pokemon_ranking.csv
 
 ### 2. Develop an integration with the PokéAPI to extract the relevant information and store it in defined storage schema.
@@ -57,30 +59,31 @@ The list of eligible Pokemon for this team is all Pokemon in the National Dex ht
    The example of script run from command line on Linux:
 
 /src/pokemon-selection> ./select_pokemon.py  
-Retrieving list of eligible pokemon in 1.307 s  
-Retrieving pokemon types in 0.166 s  
-Retrieving damage relations for normal in 0.462 s  
-Retrieving damage relations for fighting in 0.349 s  
-Retrieving damage relations for flying in 0.497 s  
-Retrieving damage relations for poison in 0.375 s  
-Retrieving damage relations for ground in 0.397 s  
-Retrieving damage relations for rock in 0.393 s  
-Retrieving damage relations for bug in 0.417 s  
-Retrieving damage relations for ghost in 0.334 s  
-Retrieving damage relations for steel in 0.367 s  
-Retrieving damage relations for fire in 0.396 s  
-Retrieving damage relations for water in 0.56 s  
-Retrieving damage relations for grass in 0.475 s  
-Retrieving damage relations for electric in 0.38 s  
-Retrieving damage relations for psychic in 0.455 s  
-Retrieving damage relations for ice in 0.329 s  
-Retrieving damage relations for dragon in 0.337 s  
-Retrieving damage relations for dark in 0.367 s  
-Retrieving damage relations for fairy in 0.325 s  
-Retrieving damage relations for unknown in 0.154 s  
-Retrieving damage relations for shadow in 0.154 s  
-Reformating and writing data in 1.162 s  
-Total runtime 10.2 s
+
+Retrieving list of eligible pokemon in 1.359 s
+Retrieving pokemon types in 0.155 s
+Retrieving damage relations for normal in 0.478 s
+Retrieving damage relations for fighting in 0.36 s
+Retrieving damage relations for flying in 0.493 s
+Retrieving damage relations for poison in 0.402 s
+Retrieving damage relations for ground in 0.409 s
+Retrieving damage relations for rock in 0.377 s
+Retrieving damage relations for bug in 0.418 s
+Retrieving damage relations for ghost in 0.33 s
+Retrieving damage relations for steel in 0.378 s
+Retrieving damage relations for fire in 0.395 s
+Retrieving damage relations for water in 0.574 s
+Retrieving damage relations for grass in 0.491 s
+Retrieving damage relations for electric in 0.38 s
+Retrieving damage relations for psychic in 0.451 s
+Retrieving damage relations for ice in 0.309 s
+Retrieving damage relations for dragon in 0.344 s
+Retrieving damage relations for dark in 0.361 s
+Retrieving damage relations for fairy in 0.316 s
+Retrieving damage relations for unknown in 0.216 s
+Retrieving damage relations for shadow in 0.155 s
+Reformating and writing data in 0.391 s
+Total runtime 9.5 s
 
 ### 3. Final result:  
    From pokemon_ranking.csv file, it follows:  
@@ -88,12 +91,12 @@ Total runtime 10.2 s
 
 | pokemon_name | sum_damage_to | sum_damage_from | sum_damage_diff |
 | --- | --- | --- | --- |
-| heatran | 992 | 832 | 160
-| klefki | 776 | 616 | 160
-| mawile | 776 | 616 | 160
-| skarmory | 812 | 664 | 148
-| diglett-alola | 848 | 704 | 144
-| dugtrio-alola| 848 | 704 | 144
+|dialga |	26 |	13 |	13
+|tyrantrum | 24	| 14 |	10
+|tyrunt	| 24 | 14	| 10
+|aggron	| 30 |	21 |	9
+|aron	| 30 |	21	| 9
+|bastiodon	| 30 |	21 |	9
 
 ### 4. Followup Questions:
 
