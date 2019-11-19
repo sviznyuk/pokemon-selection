@@ -41,8 +41,8 @@ The list of eligible Pokemon for this team is all Pokemon in the National Dex ht
    eligible_pokemon.csv  
    damage_relations.csv  
    pokemon_types.csv  
-   pokemon_damage_levels_to.csv
-   pokemon_damage_levels_from.csv
+   pokemon_damage_levels_to.csv  
+   pokemon_damage_levels_from.csv  
    pokemon_ranking.csv
 
 ### 2. Develop an integration with the PokéAPI to extract the relevant information and store it in defined storage schema.
@@ -60,29 +60,29 @@ The list of eligible Pokemon for this team is all Pokemon in the National Dex ht
 
 /src/pokemon-selection> ./select_pokemon.py  
 
-Retrieving list of eligible pokemon in 1.359 s
-Retrieving pokemon types in 0.155 s
-Retrieving damage relations for normal in 0.478 s
-Retrieving damage relations for fighting in 0.36 s
-Retrieving damage relations for flying in 0.493 s
-Retrieving damage relations for poison in 0.402 s
-Retrieving damage relations for ground in 0.409 s
-Retrieving damage relations for rock in 0.377 s
-Retrieving damage relations for bug in 0.418 s
-Retrieving damage relations for ghost in 0.33 s
-Retrieving damage relations for steel in 0.378 s
-Retrieving damage relations for fire in 0.395 s
-Retrieving damage relations for water in 0.574 s
-Retrieving damage relations for grass in 0.491 s
-Retrieving damage relations for electric in 0.38 s
-Retrieving damage relations for psychic in 0.451 s
-Retrieving damage relations for ice in 0.309 s
-Retrieving damage relations for dragon in 0.344 s
-Retrieving damage relations for dark in 0.361 s
-Retrieving damage relations for fairy in 0.316 s
-Retrieving damage relations for unknown in 0.216 s
-Retrieving damage relations for shadow in 0.155 s
-Reformating and writing data in 0.391 s
+Retrieving list of eligible pokemon in 1.359 s  
+Retrieving pokemon types in 0.155 s  
+Retrieving damage relations for normal in 0.478 s  
+Retrieving damage relations for fighting in 0.36 s  
+Retrieving damage relations for flying in 0.493 s  
+Retrieving damage relations for poison in 0.402 s  
+Retrieving damage relations for ground in 0.409 s  
+Retrieving damage relations for rock in 0.377 s  
+Retrieving damage relations for bug in 0.418 s  
+Retrieving damage relations for ghost in 0.33 s  
+Retrieving damage relations for steel in 0.378 s  
+Retrieving damage relations for fire in 0.395 s  
+Retrieving damage relations for water in 0.574 s  
+Retrieving damage relations for grass in 0.491 s  
+Retrieving damage relations for electric in 0.38 s  
+Retrieving damage relations for psychic in 0.451 s  
+Retrieving damage relations for ice in 0.309 s  
+Retrieving damage relations for dragon in 0.344 s  
+Retrieving damage relations for dark in 0.361 s  
+Retrieving damage relations for fairy in 0.316 s  
+Retrieving damage relations for unknown in 0.216 s  
+Retrieving damage relations for shadow in 0.155 s  
+Reformating and writing data in 0.391 s  
 Total runtime 9.5 s
 
 ### 3. Final result:  
